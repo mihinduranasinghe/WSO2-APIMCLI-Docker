@@ -34,7 +34,7 @@ echo "::end-group"
 echo "::group::Setup API in development tenant"
 # apictl import-api -f $API_DIR -e $DEV_ENV -k --preserve-provider --update --verbose
 apimcli login wso2apicloud -u mihindu@wso2.com@development -p $2 -k
-apimcli import-api -f . -e wso2apicloud --preserve-provider --update --verbose -k
+apimcli import-api -f $GITHUB_WORKSPACE -e wso2apicloud --preserve-provider --update --verbose -k
 apimcli logout wso2apicloud 
 echo "::end-group"
 
