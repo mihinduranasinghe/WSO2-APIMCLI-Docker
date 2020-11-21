@@ -6,7 +6,8 @@ COPY apimcli /usr/local/bin/apimcli
 RUN chmod +x /usr/local/bin/apimcli
 
 WORKDIR /usr/src/app
-COPY . /usr/src/app
+# COPY . /usr/src/app
+COPY . .
 RUN chmod +x /usr/src/app/script.sh
 
 RUN cd $GITHUB_WORKSPACE
