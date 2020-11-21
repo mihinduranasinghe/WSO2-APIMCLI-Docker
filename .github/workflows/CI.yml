@@ -15,7 +15,7 @@ jobs:
         id: apim
         with:
           username: "Mihindu"
-          password: "${{secrets.PASSWORD}}"
+          password: ${{secrets.PASSWORD}}
 
       - run: |
           echo "It works!"
