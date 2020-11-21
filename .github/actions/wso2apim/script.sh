@@ -38,7 +38,7 @@ echo "::group::Export API from current tenant"
 # apimcli export-api -n <API-name> -v <version> -r <provider> -e <environment> -u <username> -p <password> -k
 # apimcli export-api --name <API-name> --version <version> --provider <provider> --environment <environment> --username <username> --password <password> --insecure
 apimcli login wso2apicloud -u mihindu@wso2.com@development -p $2 -k
-apimcli export-api -n TeamMasterAPI -v v1.0.0 -r mihindu@wso2.com@development -e wso2apicloud --k
+apimcli export-api -n TeamMasterAPI -v v1.0.0 -r mihindu@wso2.com@development -e wso2apicloud -k
 apimcli logout wso2apicloud 
 echo "::end-group"
 
