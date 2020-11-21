@@ -7,7 +7,8 @@ RUN chmod +x /usr/local/bin/apimcli
 
 WORKDIR /usr/src/app
 COPY . /usr/src/app
-RUN chmod +x /usr/src/app
+RUN chmod +x /usr/src/app/script.sh
+
 RUN cd $GITHUB_WORKSPACE
 RUN apimcli
 
