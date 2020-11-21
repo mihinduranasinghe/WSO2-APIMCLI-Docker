@@ -1,0 +1,10 @@
+name: "wso2 apimcli"
+description: "This action can be used to run apimcli ccommands."
+author: "mihinduranasinghe"
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: "check-square"
+  color: "green"
