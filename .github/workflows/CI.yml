@@ -14,7 +14,7 @@ jobs:
         uses: ./.github/actions/wso2apim/
         id: apim
         with:
-          who-to-greet: "Mihindu"
+          username: "Mihindu"
 
       - run: |
           echo "It works!"

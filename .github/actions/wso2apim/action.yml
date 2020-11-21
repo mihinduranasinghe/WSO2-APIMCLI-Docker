@@ -2,6 +2,12 @@ name: "wso2 apimcli"
 author: "mihinduranasinghe"
 description: "This action can be used to run apimcli ccommands."
 
+inputs:
+  username:
+    description: "username"
+    required: true
+    default: wso2
+
 runs:
   using: "docker"
   image: "Dockerfile"
