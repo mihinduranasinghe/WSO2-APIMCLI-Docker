@@ -8,12 +8,17 @@ inputs:
     required: true
     default: wso2
 
+  password:
+    description: "APICloud password"
+    required: true
+
 runs:
   using: "docker"
   image: "Dockerfile"
   args:
     # - inputToArg$1 # This can be added dynamically like below. It will be get as an input to entryppoint.sh
     - ${{inputs.username}}
+    - ${{input.password}}
 
 branding:
   icon: "check-square"
