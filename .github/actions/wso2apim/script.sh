@@ -18,7 +18,7 @@ apimcli --help
 echo "::end-group"
 
 echo "::group::Add environment wso2apicloud"
-apimcli remove env wso2apicloud
+apimcli remove-env wso2apicloud
 apimcli add-env -n wso2apicloud \
                       --registration https://gateway.api.cloud.wso2.com/client-registration/register \
                       --apim https://gateway.api.cloud.wso2.com/pulisher \
@@ -34,6 +34,7 @@ echo "::end-group"
 echo "::group::Setup API in development tenant"
 # apictl import-api -f $API_DIR -e $DEV_ENV -k --preserve-provider --update --verbose
 apimcli init SampleStore --oas petstore.json --definition api_template.yaml
+ls
 apimcli login wso2apicloud -u mihindu@wso2.com@development -p $2 -k
 apimcli import-api -f $GITHUB_WORKSPACE -e wso2apicloud --preserve-provider --update --verbose -k
 apimcli logout wso2apicloud 
