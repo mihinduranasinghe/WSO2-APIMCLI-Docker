@@ -1,9 +1,8 @@
 #!/bin/sh -l
 
-
 echo "hi"
-echo "::add-mask::$1"
-echo "Hello $1"
+echo "::add-mask::$username"
+echo "Hello $username"
 
 echo "::group::Some expandable warnings"
 echo "::debug ::Debug Message"
