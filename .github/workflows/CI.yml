@@ -1,7 +1,7 @@
 name: custom actions
 on:
   push:
-    branches: [workflow]
+    branches: [main]
 
 jobs:
   testing-actions:
