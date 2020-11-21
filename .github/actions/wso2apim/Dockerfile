@@ -7,4 +7,4 @@ COPY apimcli /usr/local/bin/apimcli
 RUN chmod +x /usr/local/bin/apimcli
 RUN cd $GITHUB_WORKSPACE
 
-ENTRYPOINT ["/script.sh"]
+ENTRYPOINT ["/usr/local/bin/apimcli/script.sh"]
