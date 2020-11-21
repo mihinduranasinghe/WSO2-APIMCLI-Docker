@@ -1,7 +1,5 @@
 #!/bin/sh -l
 
-echo "Hello $1"
-ls
 # echo "::add-mask::$1"
 # echo "::group::Some expandable warnings"
 # echo "::debug ::Debug Message"
@@ -10,6 +8,7 @@ ls
 # echo "::end-group"
 
 echo "::group::WSO2 APIMCLI Version"
+echo "Hello $1"
 apimcli version
 echo "::end-group"
 
@@ -32,7 +31,9 @@ echo "::end-group"
 
 echo "::group::Setup API in development tenant"
 # apictl import-api -f $API_DIR -e $DEV_ENV -k --preserve-provider --update --verbose
-pwd
+apimcli init SampleStore --oas petstore.json --definition api_template.yaml
+
+# pwd
 git init
 git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
 git config --global user.email "my-bot@bot.com"
@@ -43,8 +44,7 @@ git branch --set-upstream-to=origin/main
 git pull 
 ls -a 
 # echo $RANDOM >> random.txt
-apimcli init SampleStore --oas petstore.json --definition api_template.yaml
-ls -a 
+# ls -a 
 git add . 
 git commit -m "API project initialized"
 git push
