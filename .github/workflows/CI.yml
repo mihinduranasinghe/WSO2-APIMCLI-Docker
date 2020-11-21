@@ -12,7 +12,8 @@ jobs:
 
       - name: Custom docker action APIM
         uses: ./.github/actions/wso2apim/
-        # id: apim
+        id: apim
+
         # with:
         #   who-to-greet: "World"
 
