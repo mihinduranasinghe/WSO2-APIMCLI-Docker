@@ -18,7 +18,6 @@ apimcli --help
 echo "::end-group"
 
 echo "::group::Add environment wso2apicloud"
-apimcli remove-env -n wso2apicloud
 apimcli add-env -n wso2apicloud \
                       --registration https://gateway.api.cloud.wso2.com/client-registration/register \
                       --apim https://gateway.api.cloud.wso2.com/pulisher \
