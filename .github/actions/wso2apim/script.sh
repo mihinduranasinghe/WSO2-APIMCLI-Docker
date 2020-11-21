@@ -1,7 +1,7 @@
 #!/bin/sh -l
 
 echo "Hello $1"
-
+ls
 # echo "::add-mask::$1"
 # echo "::group::Some expandable warnings"
 # echo "::debug ::Debug Message"
