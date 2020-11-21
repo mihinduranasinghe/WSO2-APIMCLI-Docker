@@ -3,6 +3,7 @@
 echo "hi"
 echo "Hello $1"
 echo "::add-mask::$1"
+echo "Hello $1"
 
 echo "::group::Some expandable warnings"
 echo "::debug ::Debug Message"
