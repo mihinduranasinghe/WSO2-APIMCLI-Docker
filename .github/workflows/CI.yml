@@ -16,6 +16,9 @@ jobs:
         with:
           username: "Mihindu"
           password: ${{secrets.PASSWORD}}
+          APIProjectName: "SampleStore"
+          OASJsonFilePath: "petstore.json"
+          APIDefinitionFilePath: "api_template.yaml"
 
       - run: |
           echo "It works!"

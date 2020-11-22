@@ -1,7 +1,7 @@
 #!/bin/sh -l
 
 echo "::group::WSO2 APIMCLI Version"
-echo "Hello $username"
+echo "Hello $1"
 apimcli version
 echo "::end-group"
 
@@ -25,7 +25,7 @@ echo "::end-group"
 echo "::group:: API iproject created with given API definition"
 # apictl import-api -f $API_DIR -e $DEV_ENV -k --preserve-provider --update --verbose
 # apimcli init SampleStore --oas petstore.json --definition api_template.yaml
-apimcli init SampleStore --oas petstore.json --definition api_template.yaml
+apimcli init $3 --oas $4 --definition $5
 echo "::end-group"
 
 echo "::group::Push API project into the GIT repo from VM"

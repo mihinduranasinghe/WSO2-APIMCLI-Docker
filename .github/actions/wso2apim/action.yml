@@ -12,6 +12,18 @@ inputs:
     description: "APICloud password"
     required: true
 
+  APIProjectName:
+    description: "API Project Name"
+    required: true
+
+  OASJsonFilePath:
+    description: "OAS Json File Path to create API"
+    required: true
+
+  APIDefinitionFilePath:
+    description: "API Definitio .yml File Path to create API"
+    required: true
+
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -19,6 +31,9 @@ runs:
     # - inputToArg$1 # This can be added dynamically like below. It will be get as an input to entryppoint.sh
     - ${{inputs.username}}
     - ${{inputs.password}}
+    - ${{inputs.APIProjectName}}
+    - ${{inputs.OASJsonFilePath}}
+    - ${{inputs.APIDefinitionFilePath}}
 
 branding:
   icon: "check-square"
