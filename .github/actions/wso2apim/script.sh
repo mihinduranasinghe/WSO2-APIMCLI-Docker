@@ -65,7 +65,7 @@ apimcli list apis -e wso2apicloud -k
 echo "::end-group"
 
 echo "::group::Testing With Postman Collection"
-newman run $GITHUB_WORKSPACE/$9 --insecure
+newman run $9 --insecure
 echo "::end-group"
 
 echo "::group::Export API from Dev Tenant"
