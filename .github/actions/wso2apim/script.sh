@@ -73,13 +73,13 @@ apimcli login wso2apicloud -u $3 -p $4 -k
 # apimcli import-api --file <environment>/<file> --environment <environment> --username <username> --password <password> --preserve-provider <preserve_provider> --insecure
 # apimcli import-api -f wso2apicloud/TeamMasterAPI_v1.0.0.zip -e wso2apicloud --preserve-provider=false -k
 apimcli import-api -f wso2apicloud/$5_$8.zip -e wso2apicloud --preserve-provider=false --update --verbose -k
-apimcli logout wso2apicloud 
 echo "::end-group"
 
 echo "::group::List APIS in a perticular environment"
 # apimcli list apis -e <environment> -k
 # apimcli list apis --environment <environment> --insecure
 apimcli list apis -e wso2apicloud -k
+apimcli logout wso2apicloud 
 echo "::end-group"
 
 echo "::group::Export an *App from current tenant"
