@@ -1,4 +1,5 @@
-FROM openjdk:jre-slim
+# FROM openjdk:7-alpine
+FROM openjdk:alpine-jre
 RUN apk update
 RUN apk add git
 
