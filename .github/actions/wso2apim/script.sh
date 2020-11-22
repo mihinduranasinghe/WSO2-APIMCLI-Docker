@@ -1,12 +1,26 @@
 #!/bin/sh -l
 
+
+    # $1 - usernameDevTenant
+    # $2 - passwordDevTenant
+    # $3 - usernameProdTenant
+    # $4 - passwordProdTenant
+    # $5 - APIProjectName
+    # $6 - OASJsonFilePath
+    # $7 - APIDefinitionFilePath
+    # $8 - APIVersion
+
 echo "::group::WSO2 APIMCLI Version"
-echo "Hello $1"
 apimcli version
 echo "::end-group"
 
 echo "::group::WSO2 APIMCLI Help"
 apimcli --help
+echo "::end-group"
+
+echo "::group::WSO2 APIMCloud Tenants"
+echo Dev Tenant - $1
+echo Prod tenant - $2
 echo "::end-group"
 
 echo "::group::Add environment wso2apicloud"
@@ -25,7 +39,7 @@ echo "::end-group"
 echo "::group::Init API iproject with given API definition"
 # apictl import-api -f $API_DIR -e $DEV_ENV -k --preserve-provider --update --verbose
 # apimcli init SampleStore --oas petstore.json --definition api_template.yaml
-apimcli init $3 --oas $4 --definition $5
+apimcli init $5 --oas $6 --definition $7
 echo "::end-group"
 
 echo "::group::Push API project into the GIT repo from VM"
@@ -39,7 +53,7 @@ echo "::end-group"
 
 echo "::group::Setup API in development tenant"
 apimcli login wso2apicloud -u $1 -p $2 -k
-apimcli import-api -f $GITHUB_WORKSPACE/$3 -e wso2apicloud --preserve-provider=false --update --verbose -k
+apimcli import-api -f $GITHUB_WORKSPACE/$5 -e wso2apicloud --preserve-provider=false --update --verbose -k
 apimcli logout wso2apicloud 
 echo "::end-group"
 
@@ -49,16 +63,16 @@ apimcli login wso2apicloud -u $1 -p $2 -k
 # apimcli export-api -n <API-name> -v <version> -r <provider> -e <environment> -u <username> -p <password> -k
 # apimcli export-api --name <API-name> --version <version> --provider <provider> --environment <environment> --username <username> --password <password> --insecure
 # apimcli export-api -n TeamMasterAPI -v v1.0.0 -r mihindu@wso2.com@development -e wso2apicloud -k
-apimcli export-api -n $3 -v $6 -r $1 -e wso2apicloud -k
+apimcli export-api -n $5 -v $8 -r $1 -e wso2apicloud -k
 apimcli logout wso2apicloud 
 echo "::end-group"
 
 echo "::group::Import API to targetted tenant"
-apimcli login wso2apicloud -u $7 -p $2 -k
+apimcli login wso2apicloud -u $3 -p $4 -k
 # apimcli import-api -f <environment>/<file> -e <environment> -u <username> -p <password> --preserve-provider <preserve_provider> -k
 # apimcli import-api --file <environment>/<file> --environment <environment> --username <username> --password <password> --preserve-provider <preserve_provider> --insecure
 # apimcli import-api -f wso2apicloud/TeamMasterAPI_v1.0.0.zip -e wso2apicloud --preserve-provider=false -k
-apimcli import-api -f wso2apicloud/$3_$6.zip -e wso2apicloud --preserve-provider=false --update --verbose -k
+apimcli import-api -f wso2apicloud/$5_$8.zip -e wso2apicloud --preserve-provider=false --update --verbose -k
 apimcli logout wso2apicloud 
 echo "::end-group"
 

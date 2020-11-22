@@ -7,12 +7,16 @@ inputs:
     description: "Development Tenant Username"
     required: true
 
+  passwordDevTenant:
+    description: "APICloud Dev Tenant Password"
+    required: true
+
   usernameProdTenant:
     description: "Production Tenant Username"
     required: true
 
-  password:
-    description: "APICloud password"
+  passwordProdTenant:
+    description: "APICloud Prod Tenant Password"
     required: true
 
   APIProjectName:
@@ -37,12 +41,13 @@ runs:
   args:
     # - inputToArg$1 # This can be added dynamically like below. It will be get as an input to entryppoint.sh
     - ${{inputs.usernameDevTenant}}
-    - ${{inputs.password}}
+    - ${{inputs.passwordDevTenant}}
     - ${{inputs.APIProjectName}}
     - ${{inputs.OASJsonFilePath}}
     - ${{inputs.APIDefinitionFilePath}}
     - ${{inputs.APIVersion}}
     - ${{inputs.usernameProdTenant}}
+    - ${{inputs.passwordProdTenant}}
 
 branding:
   icon: "check-square"
