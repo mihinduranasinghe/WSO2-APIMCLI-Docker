@@ -15,4 +15,4 @@ COPY . .
 RUN chmod +x /usr/src/app/script.sh
 RUN cd $GITHUB_WORKSPACE
 
-ENTRYPOINT ["git","/usr/src/app/script.sh"]
+ENTRYPOINT ["/usr/src/app/script.sh"]
