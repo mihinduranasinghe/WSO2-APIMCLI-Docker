@@ -20,7 +20,7 @@ echo "::end-group"
 
 echo "::group::WSO2 APIMCloud Tenants"
 echo Dev Tenant - $1
-echo Prod tenant - $2
+echo Prod tenant - $3
 echo "::end-group"
 
 echo "::group::Add environment wso2apicloud"
