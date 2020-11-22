@@ -1,7 +1,10 @@
 FROM ubuntu:18.04
 RUN apt update
 RUN apt install -y git
-RUN docker run hello-world
+RUN apt install nodejs
+RUN apt install npm
+
+# RUN docker run hello-world
 # FROM openjdk:jre-slim
 # ADD https://github.com/mihinduranasinghe/WSO2-APIMCLI/ /usr/local/bin/apimcli
 
