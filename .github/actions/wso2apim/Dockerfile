@@ -1,4 +1,7 @@
 FROM ubuntu
+RUN sudo apt install git-all
+
+
 # FROM openjdk:alpine-slim
 # RUN apk update
 # RUN apk add git
