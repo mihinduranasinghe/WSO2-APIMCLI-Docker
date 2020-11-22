@@ -8,7 +8,7 @@ RUN apk add git
 
 COPY apimcli /usr/local/bin/apimcli
 RUN chmod +x /usr/local/bin/apimcli
-
+RUN apimcli
 WORKDIR /usr/src/app
 # COPY . /usr/src/app
 COPY . .
