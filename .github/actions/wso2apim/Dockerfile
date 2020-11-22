@@ -5,7 +5,7 @@ RUN apt install -y git
 RUN apt install -y nodejs
 RUN apt install -y npm
 
-RUN sudo npm install -g newman@beta --unsafe-perm
+RUN npm install -y newman@beta --unsafe-perm
 
 # RUN docker run hello-world
 # FROM openjdk:jre-slim
