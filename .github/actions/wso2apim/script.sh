@@ -79,7 +79,7 @@ echo "::end-group"
 echo "::group::List APIS in a perticular environment"
 # apimcli list apis -e <environment> -k
 # apimcli list apis --environment <environment> --insecure
-# apimcli list apis -e wso2apicloud -k
+apimcli list apis -e wso2apicloud -k
 echo "::end-group"
 
 echo "::group::Export an *App from current tenant"
