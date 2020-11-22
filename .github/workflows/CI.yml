@@ -23,8 +23,8 @@ jobs:
       #     APIDefinitionFilePath: "api_template.yaml"
       #     APIVersion: "1.0.0"
 
-      - name: APIM Cloud CICD from marketplace action
-        uses: ./.github/actions/wso2apim/
+      - name: APIM Cloud CICD
+        uses: mihinduranasinghe/WSO2-APIManager-Cloud-CICD@v1
         id: apim
         with:
           usernameDevTenant: "mihindu@wso2.com@development"
