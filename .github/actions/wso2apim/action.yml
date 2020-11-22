@@ -6,7 +6,10 @@ inputs:
   usernameDevTenant:
     description: "Development Tenant Username"
     required: true
-    default: wso2
+
+  usernameProdTenant:
+    description: "Production Tenant Username"
+    required: true
 
   password:
     description: "APICloud password"
@@ -39,6 +42,7 @@ runs:
     - ${{inputs.OASJsonFilePath}}
     - ${{inputs.APIDefinitionFilePath}}
     - ${{inputs.APIVersion}}
+    - ${{inputs.usernameProdTenant}}
 
 branding:
   icon: "check-square"

@@ -54,7 +54,7 @@ apimcli logout wso2apicloud
 echo "::end-group"
 
 echo "::group::Import API to targetted tenant"
-apimcli login wso2apicloud -u mihindu@wso2.com@production -p $2 -k
+apimcli login wso2apicloud -u $7 -p $2 -k
 # apimcli import-api -f <environment>/<file> -e <environment> -u <username> -p <password> --preserve-provider <preserve_provider> -k
 # apimcli import-api --file <environment>/<file> --environment <environment> --username <username> --password <password> --preserve-provider <preserve_provider> --insecure
 # apimcli import-api -f wso2apicloud/TeamMasterAPI_v1.0.0.zip -e wso2apicloud --preserve-provider=false -k

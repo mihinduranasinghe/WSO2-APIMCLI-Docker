@@ -15,6 +15,7 @@ jobs:
         id: apim
         with:
           usernameDevTenant: "mihindu@wso2.com@development"
+          usernameProdTenant: "mihindu@wso2.com@production"
           password: ${{secrets.PASSWORD}}
           APIProjectName: "SampleStore"
           OASJsonFilePath: "petstore.json"
