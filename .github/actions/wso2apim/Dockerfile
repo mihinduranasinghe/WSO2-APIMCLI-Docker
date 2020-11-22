@@ -4,7 +4,7 @@ RUN apt update
 RUN apt install -y git
 RUN apt install -y nodejs
 RUN apt install -y npm
-RUN npm install -y -g newman
+RUN npm i newman
 
 # RUN docker run hello-world
 # FROM openjdk:jre-slim
