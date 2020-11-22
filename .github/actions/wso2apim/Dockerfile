@@ -1,7 +1,7 @@
-FROM openjdk:alpine
+FROM ubuntu
 # FROM openjdk:alpine-slim
-RUN apk update
-RUN apk add git
+# RUN apk update
+# RUN apk add git
 
 # FROM openjdk:jre-slim
 # ADD https://github.com/mihinduranasinghe/WSO2-APIMCLI/ /usr/local/bin/apimcli
