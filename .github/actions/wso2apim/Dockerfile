@@ -5,7 +5,7 @@ RUN apt install -y git
 RUN apt install -y nodejs
 RUN apt install -y npm
 RUN node -v
-RUN npm install newman@1.2.8
+RUN npm install newman@4
 # RUN npm install -y -g newman --unsafe-perm
 
 # RUN docker run hello-world
