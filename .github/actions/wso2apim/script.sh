@@ -37,13 +37,13 @@ apimcli init SampleStore --oas petstore.json --definition api_template.yaml
 ls
 git --help
 # git init
-git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
-git config --global user.email "my-bot@bot.com"
-git config --global user.name "my-bot"
-git fetch 
-git checkout main
-git branch --set-upstream-to=origin/main
-git pull 
+# git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
+# git config --global user.email "my-bot@bot.com"
+# git config --global user.name "my-bot"
+# git fetch 
+# git checkout main
+# git branch --set-upstream-to=origin/main
+# git pull 
 # ls -a 
 # # echo $RANDOM >> random.txt
 # # ls -a 
