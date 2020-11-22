@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 RUN apt update
 RUN apt install -y git
-RUN docker pull postman/newman;
+RUN docker run hello-world
 # FROM openjdk:jre-slim
 # ADD https://github.com/mihinduranasinghe/WSO2-APIMCLI/ /usr/local/bin/apimcli
 
