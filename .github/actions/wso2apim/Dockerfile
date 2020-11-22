@@ -1,9 +1,9 @@
 FROM alpine:3.5
 RUN apk update
-RUN apk add git
 
 FROM openjdk:jre-slim
 # ADD https://github.com/mihinduranasinghe/WSO2-APIMCLI/ /usr/local/bin/apimcli
+RUN apk add git
 
 COPY apimcli /usr/local/bin/apimcli
 RUN chmod +x /usr/local/bin/apimcli
