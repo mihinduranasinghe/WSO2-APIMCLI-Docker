@@ -19,6 +19,7 @@ jobs:
           APIProjectName: "SampleStore"
           OASJsonFilePath: "petstore.json"
           APIDefinitionFilePath: "api_template.yaml"
+          APIVersion: "1.0.0"
 
       - run: |
           echo "It works!"

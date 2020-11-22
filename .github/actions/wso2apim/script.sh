@@ -1,7 +1,7 @@
 #!/bin/sh -l
-
+$username = $1
 echo "::group::WSO2 APIMCLI Version"
-echo "Hello $1"
+echo "Hello $username"
 apimcli version
 echo "::end-group"
 
@@ -22,7 +22,7 @@ apimcli add-env -n wso2apicloud \
 apimcli list envs          
 echo "::end-group"
 
-echo "::group:: API iproject created with given API definition"
+echo "::group::Init API iproject with given API definition"
 # apictl import-api -f $API_DIR -e $DEV_ENV -k --preserve-provider --update --verbose
 # apimcli init SampleStore --oas petstore.json --definition api_template.yaml
 apimcli init $3 --oas $4 --definition $5
@@ -39,7 +39,7 @@ echo "::end-group"
 
 echo "::group::Setup API in development tenant"
 apimcli login wso2apicloud -u mihindu@wso2.com@development -p $2 -k
-apimcli import-api -f $GITHUB_WORKSPACE/SampleStore -e wso2apicloud --preserve-provider=false --update --verbose -k
+apimcli import-api -f $GITHUB_WORKSPACE/$3 -e wso2apicloud --preserve-provider=false --update --verbose -k
 apimcli logout wso2apicloud 
 echo "::end-group"
 
@@ -49,7 +49,7 @@ apimcli login wso2apicloud -u mihindu@wso2.com@development -p $2 -k
 # apimcli export-api -n <API-name> -v <version> -r <provider> -e <environment> -u <username> -p <password> -k
 # apimcli export-api --name <API-name> --version <version> --provider <provider> --environment <environment> --username <username> --password <password> --insecure
 # apimcli export-api -n TeamMasterAPI -v v1.0.0 -r mihindu@wso2.com@development -e wso2apicloud -k
-apimcli export-api -n SampleStore -v 1.0.0 -r mihindu@wso2.com@development -e wso2apicloud -k
+apimcli export-api -n $3 -v $6 -r mihindu@wso2.com@development -e wso2apicloud -k
 apimcli logout wso2apicloud 
 echo "::end-group"
 

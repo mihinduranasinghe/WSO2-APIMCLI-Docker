@@ -21,7 +21,11 @@ inputs:
     required: true
 
   APIDefinitionFilePath:
-    description: "API Definitio .yml File Path to create API"
+    description: "API Definition .yml File Path to create API"
+    required: true
+
+  APIVersion:
+    description: "API Version"
     required: true
 
 runs:
@@ -34,6 +38,7 @@ runs:
     - ${{inputs.APIProjectName}}
     - ${{inputs.OASJsonFilePath}}
     - ${{inputs.APIDefinitionFilePath}}
+    - ${{inputs.APIVersion}}
 
 branding:
   icon: "check-square"
