@@ -54,7 +54,7 @@ echo "::end-group"
 
 apimcli login wso2apicloud -u $1 -p $2 -k
 echo "::group::Import API project to Dev Tenant"
-apimcli import-api -f $GITHUB_WORKSPACE/$5 -e wso2apicloud --preserve-provider=false --update --verbose -k
+apimcli import-api -f $5 -e wso2apicloud --preserve-provider=false --update --verbose -k
 # apimcli logout wso2apicloud 
 echo "::end-group"
 

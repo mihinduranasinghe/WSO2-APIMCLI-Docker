@@ -8,9 +8,7 @@ RUN node -v
 RUN apt install -y npm
 
 RUN npm install -y -g newman@3 --unsafe-perm
-# RUN npm install newman@4
 
-# RUN docker run hello-world
 # FROM openjdk:jre-slim
 # ADD https://github.com/mihinduranasinghe/WSO2-APIMCLI/ /usr/local/bin/apimcli
 
