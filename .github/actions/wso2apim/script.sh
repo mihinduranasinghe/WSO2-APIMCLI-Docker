@@ -9,6 +9,7 @@
     # $6 - OASJsonFilePath
     # $7 - APIDefinitionFilePath
     # $8 - APIVersion
+    # $9 - PostmanCollectionTestFile
 
 echo "::group::WSO2 APIMCLI Version"
     apimcli version
@@ -63,6 +64,9 @@ echo "::group::List APIS in a Dev Tenant"
 apimcli list apis -e wso2apicloud -k
 echo "::end-group"
 
+echo "::group::Testing With Postman Collection"
+newman run $GITHUB_WORKSPACE/$9 --insecure
+echo "::end-group"
 
 echo "::group::Export API from Dev Tenant"
 # apimcli export-api -n <API-name> -v <version> -r <provider> -e <environment> -u <username> -p <password> -k

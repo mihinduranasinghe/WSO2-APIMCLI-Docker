@@ -10,21 +10,8 @@ jobs:
       - name: checkout files to vm
         uses: actions/checkout@v2.3.4
 
-      # - name: Custom docker action APIM
-      #   uses: ./.github/actions/wso2apim/
-      #   id: apim
-      #   with:
-      #     usernameDevTenant: "mihindu@wso2.com@development"
-      #     passwordDevTenant: ${{secrets.PASSWORD}}
-      #     usernameProdTenant: "mihindu@wso2.com@production"
-      #     passwordProdTenant: ${{secrets.PASSWORD}}
-      #     APIProjectName: "SampleStore"
-      #     OASJsonFilePath: "petstore.json"
-      #     APIDefinitionFilePath: "api_template.yaml"
-      #     APIVersion: "1.0.0"
-
-      - name: APIM Cloud CICD
-        uses: mihinduranasinghe/WSO2-APIManager-Cloud-CICD@v1
+      - name: Custom docker action APIM
+        uses: ./.github/actions/wso2apim/
         id: apim
         with:
           usernameDevTenant: "mihindu@wso2.com@development"
@@ -35,6 +22,20 @@ jobs:
           OASJsonFilePath: "petstore.json"
           APIDefinitionFilePath: "api_template.yaml"
           APIVersion: "1.0.0"
+          PostmanCollectionTestFile: "sample_store.postman_collection.json"
+
+      # - name: APIM Cloud CICD
+      #   uses: mihinduranasinghe/WSO2-APIManager-Cloud-CICD@v1
+      #   id: apim
+      #   with:
+      #     usernameDevTenant: "mihindu@wso2.com@development"
+      #     passwordDevTenant: ${{secrets.PASSWORD}}
+      #     usernameProdTenant: "mihindu@wso2.com@production"
+      #     passwordProdTenant: ${{secrets.PASSWORD}}
+      #     APIProjectName: "SampleStore"
+      #     OASJsonFilePath: "petstore.json"
+      #     APIDefinitionFilePath: "api_template.yaml"
+      #     APIVersion: "1.0.0"
 
       - run: |
           echo "It works!"

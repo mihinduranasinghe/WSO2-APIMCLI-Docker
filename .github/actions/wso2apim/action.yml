@@ -35,6 +35,10 @@ inputs:
     description: "API Version"
     required: true
 
+  PostmanCollectionTestFile:
+    description: "API Version"
+    required: true
+
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -48,6 +52,7 @@ runs:
     - ${{inputs.OASJsonFilePath}}
     - ${{inputs.APIDefinitionFilePath}}
     - ${{inputs.APIVersion}}
+    - ${{inputs.PostmanCollectionTestFile}}
 
 branding:
   icon: "check-square"
