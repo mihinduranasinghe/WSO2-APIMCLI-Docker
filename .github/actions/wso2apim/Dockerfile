@@ -3,7 +3,7 @@ RUN apt update
 
 RUN apt install -y git
 RUN apt install -y curl
-RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_10.x | -E bash -
 RUN apt -y install nodejs
 
 RUN node -v
