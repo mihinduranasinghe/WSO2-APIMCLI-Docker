@@ -29,31 +29,24 @@ apimcli add-env -n wso2apicloud \
 apimcli list envs          
 echo "::end-group"
 
-echo "::group::Setup API in development tenant"
+echo "::group:: API iproject created with given API definition"
 # apictl import-api -f $API_DIR -e $DEV_ENV -k --preserve-provider --update --verbose
 apimcli init SampleStore --oas petstore.json --definition api_template.yaml
+echo "::end-group"
 
-# pwd
-ls
-git --help
-# git init
-# git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
+echo "::group::Push API project into the GIT repo from VM"
 git config --global user.email "my-bot@bot.com"
 git config --global user.name "my-bot"
-# git fetch 
-# git checkout main
-# git branch --set-upstream-to=origin/main
-# git pull 
-# ls -a 
-# # echo $RANDOM >> random.txt
-# # ls -a 
 git add . 
 git commit -m "API project initialized"
 git push
+echo "::end-group"
 
-# apimcli login wso2apicloud -u mihindu@wso2.com@development -p $2 -k
-# apimcli import-api -f $GITHUB_WORKSPACE -e wso2apicloud --preserve-provider --update --verbose -k
-# apimcli logout wso2apicloud 
+
+echo "::group::Setup API in development tenant"
+apimcli login wso2apicloud -u mihindu@wso2.com@development -p $2 -k
+apimcli import-api -f $GITHUB_WORKSPACE/SampleStore -e wso2apicloud --preserve-provider --update --verbose -k
+apimcli logout wso2apicloud 
 echo "::end-group"
 
 
