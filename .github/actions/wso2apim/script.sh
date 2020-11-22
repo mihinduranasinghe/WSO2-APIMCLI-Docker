@@ -45,7 +45,7 @@ echo "::end-group"
 
 echo "::group::Setup API in development tenant"
 apimcli login wso2apicloud -u mihindu@wso2.com@development -p $2 -k
-apimcli import-api -f $GITHUB_WORKSPACE/SampleStore -e wso2apicloud --preserve-provider --update --verbose -k
+apimcli import-api -f $GITHUB_WORKSPACE/SampleStore -e wso2apicloud --preserve-provider=false --update --verbose -k
 apimcli logout wso2apicloud 
 echo "::end-group"
 
