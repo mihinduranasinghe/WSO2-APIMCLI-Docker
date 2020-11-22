@@ -39,4 +39,4 @@ jobs:
           PostmanCollectionTestFile: "sample_store.postman_collection.json"
 
       - run: |
-          echo "It works!"
+          echo "It works perfectly!"
