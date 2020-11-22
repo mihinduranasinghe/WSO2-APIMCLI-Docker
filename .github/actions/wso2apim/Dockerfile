@@ -1,5 +1,6 @@
-FROM ubuntu
-RUN sudo apt install git-all
+FROM ubuntu:18.04
+RUN apt update
+RUN apt install -y git
 
 
 # FROM openjdk:alpine-slim
