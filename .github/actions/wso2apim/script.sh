@@ -1,5 +1,4 @@
 #!/bin/sh -l
-git --help
 
 # echo "::add-mask::$1"
 # echo "::group::Some expandable warnings"
@@ -35,10 +34,11 @@ echo "::group::Setup API in development tenant"
 apimcli init SampleStore --oas petstore.json --definition api_template.yaml
 
 # pwd
-git init
-git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
-git config --global user.email "my-bot@bot.com"
-git config --global user.name "my-bot"
+git --help
+# git init
+# git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
+# git config --global user.email "my-bot@bot.com"
+# git config --global user.name "my-bot"
 git fetch 
 git checkout main
 git branch --set-upstream-to=origin/main
