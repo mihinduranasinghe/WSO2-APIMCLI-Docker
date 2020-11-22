@@ -1,7 +1,7 @@
 #!/bin/sh -l
-$username = $1
+
 echo "::group::WSO2 APIMCLI Version"
-echo "Hello $username"
+echo "Hello $1"
 apimcli version
 echo "::end-group"
 
@@ -58,7 +58,7 @@ apimcli login wso2apicloud -u mihindu@wso2.com@production -p $2 -k
 # apimcli import-api -f <environment>/<file> -e <environment> -u <username> -p <password> --preserve-provider <preserve_provider> -k
 # apimcli import-api --file <environment>/<file> --environment <environment> --username <username> --password <password> --preserve-provider <preserve_provider> --insecure
 # apimcli import-api -f wso2apicloud/TeamMasterAPI_v1.0.0.zip -e wso2apicloud --preserve-provider=false -k
-apimcli import-api -f wso2apicloud/SampleStore_1.0.0.zip -e wso2apicloud --preserve-provider=false -k
+apimcli import-api -f wso2apicloud/SampleStore_1.0.0.zip -e wso2apicloud --preserve-provider=false --update --verbose -k
 apimcli logout wso2apicloud 
 echo "::end-group"
 
