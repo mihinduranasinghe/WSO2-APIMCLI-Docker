@@ -2,20 +2,15 @@ FROM ubuntu:18.04
 RUN apt update
 RUN apt install -y git
 
-
-# FROM openjdk:alpine-slim
-# RUN apk update
-# RUN apk add git
-
 # FROM openjdk:jre-slim
 # ADD https://github.com/mihinduranasinghe/WSO2-APIMCLI/ /usr/local/bin/apimcli
 
 COPY apimcli /usr/local/bin/apimcli
 RUN chmod +x /usr/local/bin/apimcli
-RUN apimcli
+
 WORKDIR /usr/src/app
-# COPY . /usr/src/app
-COPY . .
+COPY . /usr/src/app
+# COPY . .
 RUN chmod +x /usr/src/app/script.sh
 RUN cd $GITHUB_WORKSPACE
 

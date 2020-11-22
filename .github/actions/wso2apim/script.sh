@@ -1,14 +1,7 @@
 #!/bin/sh -l
 
-# echo "::add-mask::$1"
-# echo "::group::Some expandable warnings"
-# echo "::debug ::Debug Message"
-# echo "::warning ::Warning Message"
-# echo "::error ::Error Message"
-# echo "::end-group"
-
 echo "::group::WSO2 APIMCLI Version"
-echo "Hello $1"
+echo "Hello $username"
 apimcli version
 echo "::end-group"
 
@@ -31,6 +24,7 @@ echo "::end-group"
 
 echo "::group:: API iproject created with given API definition"
 # apictl import-api -f $API_DIR -e $DEV_ENV -k --preserve-provider --update --verbose
+# apimcli init SampleStore --oas petstore.json --definition api_template.yaml
 apimcli init SampleStore --oas petstore.json --definition api_template.yaml
 echo "::end-group"
 
