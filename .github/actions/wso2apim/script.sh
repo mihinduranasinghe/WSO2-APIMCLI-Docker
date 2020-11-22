@@ -38,18 +38,18 @@ echo "::end-group"
 
 
 echo "::group::Setup API in development tenant"
-apimcli login wso2apicloud -u mihindu@wso2.com@development -p $2 -k
+apimcli login wso2apicloud -u $1 -p $2 -k
 apimcli import-api -f $GITHUB_WORKSPACE/$3 -e wso2apicloud --preserve-provider=false --update --verbose -k
 apimcli logout wso2apicloud 
 echo "::end-group"
 
 
 echo "::group::Export API from development tenant"
-apimcli login wso2apicloud -u mihindu@wso2.com@development -p $2 -k
+apimcli login wso2apicloud -u $1 -p $2 -k
 # apimcli export-api -n <API-name> -v <version> -r <provider> -e <environment> -u <username> -p <password> -k
 # apimcli export-api --name <API-name> --version <version> --provider <provider> --environment <environment> --username <username> --password <password> --insecure
 # apimcli export-api -n TeamMasterAPI -v v1.0.0 -r mihindu@wso2.com@development -e wso2apicloud -k
-apimcli export-api -n $3 -v $6 -r mihindu@wso2.com@development -e wso2apicloud -k
+apimcli export-api -n $3 -v $6 -r $1 -e wso2apicloud -k
 apimcli logout wso2apicloud 
 echo "::end-group"
 
@@ -58,7 +58,7 @@ apimcli login wso2apicloud -u mihindu@wso2.com@production -p $2 -k
 # apimcli import-api -f <environment>/<file> -e <environment> -u <username> -p <password> --preserve-provider <preserve_provider> -k
 # apimcli import-api --file <environment>/<file> --environment <environment> --username <username> --password <password> --preserve-provider <preserve_provider> --insecure
 # apimcli import-api -f wso2apicloud/TeamMasterAPI_v1.0.0.zip -e wso2apicloud --preserve-provider=false -k
-apimcli import-api -f wso2apicloud/SampleStore_1.0.0.zip -e wso2apicloud --preserve-provider=false --update --verbose -k
+apimcli import-api -f wso2apicloud/$3_$6.zip -e wso2apicloud --preserve-provider=false --update --verbose -k
 apimcli logout wso2apicloud 
 echo "::end-group"
 

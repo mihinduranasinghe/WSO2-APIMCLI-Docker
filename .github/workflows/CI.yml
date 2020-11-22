@@ -14,7 +14,7 @@ jobs:
         uses: ./.github/actions/wso2apim/
         id: apim
         with:
-          username: "Mihindu"
+          usernameDevTenant: "mihindu@wso2.com@development"
           password: ${{secrets.PASSWORD}}
           APIProjectName: "SampleStore"
           OASJsonFilePath: "petstore.json"

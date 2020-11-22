@@ -3,8 +3,8 @@ author: "mihinduranasinghe"
 description: "This action can be used to run apimcli ccommands."
 
 inputs:
-  username:
-    description: "username"
+  usernameDevTenant:
+    description: "Development Tenant Username"
     required: true
     default: wso2
 
@@ -33,7 +33,7 @@ runs:
   image: "Dockerfile"
   args:
     # - inputToArg$1 # This can be added dynamically like below. It will be get as an input to entryppoint.sh
-    - ${{inputs.username}}
+    - ${{inputs.usernameDevTenant}}
     - ${{inputs.password}}
     - ${{inputs.APIProjectName}}
     - ${{inputs.OASJsonFilePath}}
