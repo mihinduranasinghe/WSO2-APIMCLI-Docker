@@ -1,16 +1,13 @@
 FROM ubuntu:18.04
 RUN apt update
-
 RUN apt install -y git
 RUN apt install -y curl
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
-RUN apt-get install -y gcc g++ make
 RUN apt -y install nodejs
 
 RUN node -v
 RUN apt install -y npm
 
-RUN npm install -y -g newman --unsafe-perm
+RUN npm install -y -g newman@3 --unsafe-perm
 # RUN npm install newman@4
 
 # RUN docker run hello-world
