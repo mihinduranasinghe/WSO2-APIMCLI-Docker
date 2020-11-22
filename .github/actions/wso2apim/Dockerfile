@@ -1,6 +1,4 @@
 FROM ubuntu
-RUN apt-get install -y git
-RUN git --help
 
 FROM openjdk:jre-slim
 
@@ -13,6 +11,8 @@ WORKDIR /usr/src/app
 # COPY . /usr/src/app
 COPY . .
 RUN chmod +x /usr/src/app/script.sh
+RUN apt-get install -y git
+RUN git --help
 RUN cd $GITHUB_WORKSPACE
 
 ENTRYPOINT ["/usr/src/app/script.sh"]
