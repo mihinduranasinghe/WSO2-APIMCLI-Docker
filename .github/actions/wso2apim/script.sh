@@ -51,19 +51,19 @@ echo "::end-group"
 
 
 echo "::group::Export API from development tenant"
+apimcli login wso2apicloud -u mihindu@wso2.com@development -p $2 -k
 # apimcli export-api -n <API-name> -v <version> -r <provider> -e <environment> -u <username> -p <password> -k
 # apimcli export-api --name <API-name> --version <version> --provider <provider> --environment <environment> --username <username> --password <password> --insecure
-# apimcli login wso2apicloud -u mihindu@wso2.com@development -p $2 -k
-# apimcli export-api -n TeamMasterAPI -v v1.0.0 -r mihindu@wso2.com@development -e wso2apicloud -k
-# apimcli logout wso2apicloud 
+apimcli export-api -n TeamMasterAPI -v v1.0.0 -r mihindu@wso2.com@development -e wso2apicloud -k
+apimcli logout wso2apicloud 
 echo "::end-group"
 
 echo "::group::Import API to targetted tenant"
+apimcli login wso2apicloud -u mihindu@wso2.com@production -p $2 -k
 # apimcli import-api -f <environment>/<file> -e <environment> -u <username> -p <password> --preserve-provider <preserve_provider> -k
 # apimcli import-api --file <environment>/<file> --environment <environment> --username <username> --password <password> --preserve-provider <preserve_provider> --insecure
-# apimcli login wso2apicloud -u mihindu@wso2.com@production -p $2 -k
-# apimcli import-api -f wso2apicloud/TeamMasterAPI_v1.0.0.zip -e wso2apicloud --preserve-provider=false -k
-# apimcli logout wso2apicloud 
+apimcli import-api -f wso2apicloud/TeamMasterAPI_v1.0.0.zip -e wso2apicloud --preserve-provider=false -k
+apimcli logout wso2apicloud 
 echo "::end-group"
 
 echo "::group::List APIS in a perticular environment"
