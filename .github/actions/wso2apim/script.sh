@@ -11,11 +11,11 @@
     # $8 - APIVersion
 
 echo "::group::WSO2 APIMCLI Version"
-apimcli version
+    apimcli version
 echo "::end-group"
 
 echo "::group::WSO2 APIMCLI Help"
-apimcli --help
+    apimcli --help
 echo "::end-group"
 
 echo "::group::WSO2 APIMCloud Tenants"
