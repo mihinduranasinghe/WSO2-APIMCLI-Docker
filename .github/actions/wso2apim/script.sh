@@ -36,7 +36,7 @@ apimcli init SampleStore --oas petstore.json --definition api_template.yaml
 # pwd
 ls
 git --help
-# git init
+git init
 # git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
 # git config --global user.email "my-bot@bot.com"
 # git config --global user.name "my-bot"
